@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILM Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="icon" type="image/x-icon" href="../Logo/ilm-logo.jpg">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-sidebar">
+            <div class="sidebar-header">
+                <img src="../Logo/ilm-logo.jpg" alt="ILM Logo" class="admin-logo">
+                <h2>ILM Admin</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="pages/overview.html" class="menu-item active" data-page="overview">Overview</a></li>
+                <li><a href="pages/bookings.html" class="menu-item" data-page="bookings">Bookings</a></li>
+                <li><a href="pages/students.html" class="menu-item" data-page="students">Students</a></li>
+                <li><a href="pages/rooms.html" class="menu-item" data-page="rooms">Rooms</a></li>
+                <li><a href="pages/maintenance.html" class="menu-item" data-page="maintenance">Maintenance</a></li>
+                <li><a href="pages/announcements.html" class="menu-item" data-page="announcements">Announcements</a></li>
+                <li><a href="pages/analytics.html" class="menu-item" data-page="analytics">Analytics</a></li>
+                <li><a href="pages/users.html" class="menu-item" data-page="users">Users</a></li>
+                <li><a href="pages/documents.html" class="menu-item" data-page="documents">Documents</a></li>
+                <li><a href="pages/gallery.html" class="menu-item" data-page="gallery">Gallery</a></li>
+                <li><a href="pages/deposit-receipt.html" class="menu-item" data-page="deposit-receipt">Deposit Receipt</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="../index.html" class="logout-btn">Back to Site</a>
+            </div>
+        </nav>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-left">
+                    <h1>Admin Dashboard</h1>
+                    <p>Welcome back, Administrator</p>
+                </div>
+                <div class="header-right">
+                    <div class="admin-profile">
+                        <span class="admin-name">Admin User</span>
+                        <img src="../Logo/ilm-logo.jpg" alt="Admin" class="admin-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div id="overview" class="page-content active">
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <h3>Total Bookings</h3>
+                            <p class="stat-number">156</p>
+                            <span class="stat-change positive">+12%</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Active Students</h3>
+                            <p class="stat-number">142</p>
+                            <span class="stat-change positive">+8%</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Available Rooms</h3>
+                            <p class="stat-number">23</p>
+                            <span class="stat-change negative">-5%</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Maintenance Requests</h3>
+                            <p class="stat-number">7</p>
+                            <span class="stat-change neutral">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <span class="activity-time">2 hours ago</span>
+                                <span class="activity-text">New booking received from John Doe</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">4 hours ago</span>
+                                <span class="activity-text">Maintenance request completed in Room 205</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">6 hours ago</span>
+                                <span class="activity-text">New student registration: Jane Smith</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
