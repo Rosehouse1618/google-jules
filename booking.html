@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Room - ILM Student Halls</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="Logo/ilm-logo.jpg">
+    <style>
+        .booking-section {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .booking-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 800px;
+            margin: 0 auto;
+            color: #333;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .submit-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .room-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .room-option {
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .room-option:hover {
+            border-color: #3498db;
+            transform: translateY(-2px);
+        }
+        
+        .room-option.selected {
+            border-color: #3498db;
+            background: #f7fbfe;
+        }
+        
+        .room-option h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .room-option .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+        
+        .room-option .features {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-form {
+                margin: 0 1rem;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="Logo/ilm-logo.jpg" alt="ILM Logo" class="logo-img">
+                    <span class="logo-text">ILM Student Halls</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#rooms" class="nav-link">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="booking.html" class="nav-link active">Book Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="student-portal.html" class="nav-link">Student Portal</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <div class="container">
+                <h1>Book Your Room</h1>
+                <p>Choose your perfect accommodation and secure your place today</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 80px 0;">
+            <div class="booking-form">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Room Selection</h2>
+                
+                <div class="room-options">
+                    <div class="room-option" data-room="standard">
+                        <h3>Standard Single Room</h3>
+                        <div class="price">£120/week</div>
+                        <div class="features">Single bed, shared bathroom, study desk</div>
+                    </div>
+                    <div class="room-option" data-room="ensuite">
+                        <h3>En-suite Room</h3>
+                        <div class="price">£150/week</div>
+                        <div class="features">Single bed, private bathroom, study desk</div>
+                    </div>
+                    <div class="room-option" data-room="shared">
+                        <h3>Shared Apartment</h3>
+                        <div class="price">£100/week</div>
+                        <div class="features">Shared living space, private bedroom</div>
+                    </div>
+                </div>
+
+                <form id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="university">University/College *</label>
+                            <input type="text" id="university" name="university" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Course of Study</label>
+                            <input type="text" id="course" name="course">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">Preferred Start Date *</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration of Stay *</label>
+                            <select id="duration" name="duration" required>
+                                <option value="">Select duration</option>
+                                <option value="1-semester">1 Semester</option>
+                                <option value="2-semesters">2 Semesters</option>
+                                <option value="full-year">Full Academic Year</option>
+                                <option value="summer">Summer Only</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialRequirements">Special Requirements</label>
+                        <textarea id="specialRequirements" name="specialRequirements" rows="4" placeholder="Any special needs or requests..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="selectedRoom">Selected Room Type *</label>
+                        <input type="text" id="selectedRoom" name="selectedRoom" readonly required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Booking Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ILM Student Halls. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="policies.html">Policies</a>
+                <a href="faq.html">FAQ</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Room selection
+        document.querySelectorAll('.room-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.room-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                const roomType = this.querySelector('h3').textContent;
+                document.getElementById('selectedRoom').value = roomType;
+            });
+        });
+
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const bookingData = Object.fromEntries(formData);
+            
+            // Validate room selection
+            if (!bookingData.selectedRoom) {
+                alert('Please select a room type');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your booking request! We will contact you within 24 hours to confirm your reservation.');
+            
+            // In a real application, this would send data to a server
+            console.log('Booking data:', bookingData);
+        });
+    </script>
+</body>
+</html>
